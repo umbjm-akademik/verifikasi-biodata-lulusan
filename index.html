@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Verifikasi Biodata Mahasiswa Lulusan</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="card hero">
+      <div class="logo">UMB</div>
+      <h1>Verifikasi Biodata Mahasiswa Lulusan</h1>
+      <p class="muted">Silakan siapkan ijazah terakhir, KTP/KK, dan data aktif sebelum mulai.</p>
+    </section>
+
+    <section class="card" id="loginCard">
+      <h2>Masuk Verifikasi</h2>
+      <div class="form-grid">
+        <label>
+          <span>NIM</span>
+          <input id="nim" inputmode="numeric" placeholder="Contoh: 22110001" autocomplete="off" />
+        </label>
+        <label>
+          <span>Tanggal Lahir</span>
+          <input id="tglLahir" type="date" />
+        </label>
+        <label>
+          <span>Verifikasi</span>
+          <div class="captcha-row">
+            <div class="captcha-text" id="captchaText">3 + 7 = ?</div>
+            <input id="captchaAnswer" inputmode="numeric" placeholder="Jawaban" autocomplete="off" />
+          </div>
+        </label>
+      </div>
+      <button id="btnTampil" class="btn primary">Tampilkan Data</button>
+      <p class="hint" id="loginMsg"></p>
+    </section>
+
+    <section class="card hidden" id="dataCard">
+      <div class="section-head">
+        <h2>Data Verifikasi</h2>
+        <span class="pill" id="statusPill">Belum diverifikasi</span>
+      </div>
+
+      <div id="studentInfo" class="student-info"></div>
+      <div id="verificationList" class="verification-list"></div>
+
+      <div class="card subcard">
+        <h3>Data yang dapat diperbarui</h3>
+        <div class="form-grid">
+          <label>
+            <span>Nomor HP</span>
+            <input id="editHp" inputmode="numeric" placeholder="Awali dengan 0" />
+          </label>
+          <label>
+            <span>E-Mail</span>
+            <input id="editEmail" type="email" placeholder="nama@email.com" />
+          </label>
+          <label>
+            <span>Jenis Kelamin</span>
+            <select id="editJk">
+              <option value="">Pilih</option>
+              <option>Laki-laki</option>
+              <option>Perempuan</option>
+            </select>
+          </label>
+          <label>
+            <span>Agama</span>
+            <select id="editAgama">
+              <option value="">Pilih</option>
+              <option>Islam</option>
+              <option>Kristen</option>
+              <option>Katolik</option>
+              <option>Hindu</option>
+              <option>Buddha</option>
+              <option>Khonghucu</option>
+              <option>Penghayat Kepercayaan Terhadap Tuhan YME</option>
+              <option>Lainnya</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <label class="checkbox-wrap">
+        <input id="declaration" type="checkbox" />
+        <span>Saya menyatakan data di atas telah saya periksa dan benar sesuai dokumen resmi.</span>
+      </label>
+
+      <div class="actions">
+        <button id="btnUnduh" class="btn success" disabled>Unduh Formulir Biodata</button>
+        <button id="btnWA" class="btn outline hidden">Hubungi Admin</button>
+      </div>
+      <p class="hint" id="resultMsg"></p>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
